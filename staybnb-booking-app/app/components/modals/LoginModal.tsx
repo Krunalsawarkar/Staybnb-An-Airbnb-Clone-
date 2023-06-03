@@ -91,12 +91,6 @@ const LoginModal = () => {
         icon={AiFillFacebook}
         onClick={() => signIn("facebook")}
       />
-      <Button
-        outline
-        label="Continue with Mail"
-        icon={AiOutlineMail}
-        onClick={() => {}}
-      />
       <div
         className="
           text-neutral-500
