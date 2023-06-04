@@ -66,6 +66,5 @@ export async function DELETE(
             favoriteIds
         }
     });
-
     
 }
