@@ -22,6 +22,7 @@ export async function POST(request: Request) {
     price,
   } = body;
 
+
   const listing = await prisma.listing.create({
     data: {
       title,
