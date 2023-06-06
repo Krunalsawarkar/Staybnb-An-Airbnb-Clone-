@@ -4,9 +4,17 @@ import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import { categories } from "@/app/components/navbar/Categories";
+import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeListing, SafeUser } from "@/app/types";
 import { Reservation } from "@prisma/client";
+import { useRouter } from "next/navigation";
 import { useMemo } from "react";
+
+const initialDateRange = {
+  startDate: new Date(),
+  endDate: new Date(),
+  key: 'selection'
+}
 
 interface ListingClientProps {
   reservations?: Reservation[];
@@ -18,11 +26,19 @@ interface ListingClientProps {
 
 const ListingClient: React.FC<ListingClientProps> = ({
   listing,
+  reservation = [],
   currentUser,
 }) => {
   const category = useMemo(() => {
     return categories.find((item) => item.label === listing.category);
   }, [listing.category]);
+
+  const loginModal = useLoginModal();
+  const router = useRouter();
+
+  const disabledDate = useMemo(()=>{
+    
+  },[])
 
   return (
     <Container>
