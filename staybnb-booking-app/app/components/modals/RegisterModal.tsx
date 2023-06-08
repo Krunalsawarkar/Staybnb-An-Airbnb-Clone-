@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { AiFillFacebook, AiOutlineMail } from "react-icons/ai";
+import { AiFillFacebook } from "react-icons/ai";
 
 import { FcGoogle } from "react-icons/fc";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -13,6 +13,7 @@ import Heading from "../Heading";
 import Input from "../inputs/Input";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
+
 
 
 const RegisterModal = () => {
@@ -37,7 +38,9 @@ const RegisterModal = () => {
     axios
       .post("api/register", data)
       .then(() => {
+        toast.success('Registered Successfully')
         registerModal.onClose();
+        loginModal.onOpen();
       })
       .catch((error) => {
         toast.error("Something went wrong");
