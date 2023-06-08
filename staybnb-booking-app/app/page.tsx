@@ -20,7 +20,7 @@ const Home = async({
       <EmptyState showReset />
     )
   }
-
+ 
   return (
     <Container>
       <div
